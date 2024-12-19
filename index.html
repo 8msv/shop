@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background-color: #222;
+            color: #fff;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Shop</h1>
+        <p>Quality items for friends</p>
+    </header>
+    <main>
+        <section class="item">
+            <img src="louis-vuitton-beanie.jpg" alt="Louis Vuitton Beanie">
+            <h2>Louis Vuitton Beanie</h2>
+            <p class="price">$25</p>
+        </section>
+        <section class="item">
+            <img src="moncler-beanie.jpg" alt="Moncler Beanie">
+            <h2>Moncler Beanie</h2>
+            <p class="price">$25</p>
+        </section>
+        <section class="item">
+            <img src="jordan-4s-low.jpg" alt="Jordan 4s Low Quality">
+            <h2>Jordan 4s (Low Quality)</h2>
+            <p class="price">$70</p>
+        </section>
+        <section class="item">
+            <img src="jordan-4s-top.jpg" alt="Jordan 4s Top Quality">
+            <h2>Jordan 4s (Top Quality)</h2>
+            <p class="price">$150</p>
+        </section>
+    </main>
+    <footer>
+        <p>Contact me for purchases!</p>
+    </footer>
+</body>
+</html>
