@@ -73,7 +73,7 @@
 
         /* Custom Crosshair */
         .crosshair {
-            position: absolute;
+            position: fixed; /* Changed to fixed */
             width: 30px;
             height: 30px;
             pointer-events: none; /* Prevent interaction with the crosshair */
@@ -126,8 +126,9 @@
         const crosshair = document.getElementById('crosshair');
 
         document.addEventListener('mousemove', (e) => {
-            crosshair.style.left = `${e.pageX}px`;
-            crosshair.style.top = `${e.pageY}px`;
+            // Use clientX and clientY for consistent viewport positioning
+            crosshair.style.left = `${e.clientX}px`;
+            crosshair.style.top = `${e.clientY}px`;
         });
     </script>
 </body>
