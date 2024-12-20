@@ -66,7 +66,7 @@
 
         /* Custom Crosshair */
         .crosshair {
-            position: fixed; /* Change to fixed so it stays in the same place during scroll */
+            position: fixed; /* Keep the crosshair fixed */
             width: 30px;
             height: 30px;
             pointer-events: none; /* Prevent interaction with the crosshair */
@@ -118,8 +118,9 @@
         const crosshair = document.getElementById('crosshair');
 
         document.addEventListener('mousemove', (e) => {
-            crosshair.style.left = `${e.pageX}px`;
-            crosshair.style.top = `${e.pageY}px`;
+            // Use clientX and clientY to get the cursor position relative to the viewport
+            crosshair.style.left = `${e.clientX}px`;
+            crosshair.style.top = `${e.clientY}px`;
         });
     </script>
 </body>
