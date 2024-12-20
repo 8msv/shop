@@ -186,8 +186,8 @@
     <script>
         const crosshair = document.getElementById('crosshair');
 
+        // Function to update crosshair position
         document.addEventListener('mousemove', (e) => {
-            // Use clientX and clientY to get the cursor position relative to the viewport
             crosshair.style.left = `${e.clientX}px`;
             crosshair.style.top = `${e.clientY}px`;
         });
