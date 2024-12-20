@@ -12,6 +12,7 @@
             background-color: #171716;
             color: #fff;
             cursor: none; /* Hide the default cursor */
+            position: relative;
         }
 
         /* Full-page overlay while password screen is active */
@@ -178,18 +179,18 @@
             </div>
             <p>@nam_s69</p>
         </footer>
-
-        <!-- Custom Crosshair Image -->
-        <img src="https://attic.sh/xpre9ox5vh7mcvksnw3jgvp9ckb9" alt="Crosshair" class="crosshair" id="crosshair">
     </div>
+
+    <!-- Custom Crosshair Image -->
+    <img src="https://attic.sh/xpre9ox5vh7mcvksnw3jgvp9ckb9" alt="Crosshair" class="crosshair" id="crosshair">
 
     <script>
         const crosshair = document.getElementById('crosshair');
 
         // Function to update crosshair position
         document.addEventListener('mousemove', (e) => {
-            crosshair.style.left = `${e.clientX}px`;
-            crosshair.style.top = `${e.clientY}px`;
+            crosshair.style.left = `${e.pageX}px`;  // Use pageX for the entire page
+            crosshair.style.top = `${e.pageY}px`;  // Use pageY for the entire page
         });
 
         function checkPassword() {
