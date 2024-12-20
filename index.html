@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #171716;
             color: #fff;
+            cursor: none; /* Hide the default cursor */
         }
 
         header {
@@ -72,7 +73,7 @@
 
         /* Custom Crosshair */
         .crosshair {
-            position: fixed;
+            position: absolute;
             width: 30px;
             height: 30px;
             pointer-events: none; /* Prevent interaction with the crosshair */
@@ -125,9 +126,8 @@
         const crosshair = document.getElementById('crosshair');
 
         document.addEventListener('mousemove', (e) => {
-            // Center the crosshair around the cursor
-            crosshair.style.left = `${e.clientX}px`;
-            crosshair.style.top = `${e.clientY}px`;
+            crosshair.style.left = `${e.pageX}px`;
+            crosshair.style.top = `${e.pageY}px`;
         });
     </script>
 </body>
