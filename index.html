@@ -70,6 +70,16 @@
             font-weight: 600;
         }
 
+        /* Custom Crosshair */
+        .crosshair {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            pointer-events: none; /* Prevent interaction with the crosshair */
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
         @media (max-width: 768px) {
             main {
                 grid-template-columns: 1fr;
@@ -107,5 +117,18 @@
     <footer>
         <p>Contact me for purchases!</p>
     </footer>
+
+    <!-- Custom Crosshair Image -->
+    <img src="https://attic.sh/xpre9ox5vh7mcvksnw3jgvp9ckb9" alt="Crosshair" class="crosshair" id="crosshair">
+
+    <script>
+        const crosshair = document.getElementById('crosshair');
+
+        document.addEventListener('mousemove', (e) => {
+            // Center the crosshair around the cursor
+            crosshair.style.left = `${e.clientX}px`;
+            crosshair.style.top = `${e.clientY}px`;
+        });
+    </script>
 </body>
 </html>
