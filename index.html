@@ -44,20 +44,20 @@
             border: 1px solid #444;
             border-radius: 8px;
             text-align: center;
-            padding: 1.5rem;
+            padding: 1rem; /* Reduced padding */
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-            font-size: 1.25rem;
+            font-size: 1rem; /* Reduced font size */
             font-weight: bold;
         }
 
         .item img {
-            max-width: 100%;
+            max-width: 80%; /* Reduced image size */
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem; /* Adjusted margin */
         }
 
         .price {
-            font-size: 1.75rem;
+            font-size: 1.5rem; /* Slightly smaller price text */
             color: #007BFF;
             font-weight: bold;
         }
@@ -73,7 +73,7 @@
 
         /* Custom Crosshair */
         .crosshair {
-            position: fixed; /* Changed to fixed */
+            position: absolute;
             width: 30px;
             height: 30px;
             pointer-events: none; /* Prevent interaction with the crosshair */
@@ -126,9 +126,15 @@
         const crosshair = document.getElementById('crosshair');
 
         document.addEventListener('mousemove', (e) => {
-            // Use clientX and clientY for consistent viewport positioning
-            crosshair.style.left = `${e.clientX}px`;
-            crosshair.style.top = `${e.clientY}px`;
+            crosshair.style.left = `${e.pageX}px`;
+            crosshair.style.top = `${e.pageY}px`;
+        });
+
+        // Update crosshair position on scroll
+        document.addEventListener('scroll', (e) => {
+            const rect = crosshair.getBoundingClientRect();
+            crosshair.style.left = `${rect.left}px`;
+            crosshair.style.top = `${rect.top}px`;
         });
     </script>
 </body>
